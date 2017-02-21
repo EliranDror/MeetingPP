@@ -1,3 +1,13 @@
-print("Goodbye, World!")
+from flask import Flask
+app = Flask(__name__)
 
-print "Eliran's commit"
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+@app.route("/goodbye_world")
+def goodbye():
+    return "Goodbye World!"
+
+if __name__ == "__main__":
+    app.run()
